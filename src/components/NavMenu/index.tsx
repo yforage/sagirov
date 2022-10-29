@@ -1,5 +1,5 @@
 import React from "react";
-import NavButton from "../NavButton";
+import NavButton from "./NavButton";
 import styles from './NavMenu.module.scss';
 import classnames from 'classnames';
 
