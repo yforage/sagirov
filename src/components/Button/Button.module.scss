@@ -1,0 +1,30 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.button {
+  font-weight: 300;
+  text-align: center;
+
+  padding: $content-padding-sm $content-padding-md;
+
+  color: $color-text;
+  background: $background-main;
+}
+
+.border {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(to top right, rgba(30, 60, 97, 0.1) 50%, rgba(30, 60, 96, 1) 100%), 
+              linear-gradient(to bottom left, rgba(30, 60, 97, 0.1) 50%, rgba(30, 60, 96, 1) 100%);
+  padding: 1px;
+}
+
+.borderTopRight {
+  @include corner(right, top, 6px);
+  filter: drop-shadow(0 0 2px #FFFFFF);
+}
+
+.borderBottomLeft {
+  @include corner(left, bottom, 6px);
+  filter: drop-shadow(0 0 2px #FFFFFF);
+}

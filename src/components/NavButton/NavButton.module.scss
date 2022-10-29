@@ -1,0 +1,27 @@
+@import "src/styles/variables.scss";
+
+.button {
+  flex-shrink: 0;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -6px;
+    left: 0;
+    background-color: $color-hover;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover {
+    color: $color-hover;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}

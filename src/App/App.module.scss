@@ -1,0 +1,64 @@
+@import "src/styles/mixins.scss";
+
+.page {
+  position: relative;
+}
+
+.wrapper {
+  position: fixed;
+  top: $header-height;
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+}
+
+.sider {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include pagePadding;
+
+  width: 100%;
+  height: calc(100% - $header-height);
+
+  display: flex;
+  align-items: center;
+
+  background-color: $background-main;
+
+  &_button {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+  }
+
+  &_enter {
+    &_active {
+      width: 100%;
+      transform: translateX(0);
+    }
+
+    width: 0;
+    transform: translateX(100px);
+  }
+
+  &_exit {
+    &_active {
+      width: 0;
+      transform: translateX(100px);
+    }
+
+    transform: translateX(0);
+    width: 100%;
+  }
+  &_enter_active, &_exit_active {
+    transition: width 0.4s ease-out, transform 0.4s ease-out;
+  }
+}
+
+@media (min-width: 500px) {
+  .sider_open {
+    width: 300px;
+  }
+}

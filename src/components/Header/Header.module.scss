@@ -1,0 +1,61 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+  background-color: $background-semi-transparent;
+
+  width: 100%;
+  height: $header-height;
+
+  @include pagePadding;
+  padding-top: 1px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  border: 1px solid $color-border-header;
+  border-top: none;
+
+  @include blur;
+}
+
+.siderButton {
+  padding: 0 $content-padding-sm;
+  height: fit-content;
+  align-self: center;
+
+  svg {
+    @include svgSize;
+  }
+}
+
+.button {
+  &_enter {
+    opacity: 0;
+    transform: translateY(-100%);
+  
+    &_active {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  &_exit {
+    opacity: 1;
+    transform: translateY(0%);
+
+    &_active {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  &_enter_active, &_exit_active {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+}

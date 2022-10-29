@@ -1,0 +1,32 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.logo {
+  position: relative;
+
+  height: 100%;
+  border-left: 1px solid $color-border-header;
+  border-right: 1px solid $color-border-header;
+
+  padding: 0 $content-padding-md;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.borderBottomLeft {
+  @include corner(left, bottom, 10px, 1px);
+}
+
+.borderBottomRight {
+  @include corner(right, bottom, 10px, 1px);
+}
+
+.borderTopLeft {
+  @include corner(left, top, 10px, 1px);
+}
+
+.borderTopRight {
+  @include corner(right, top, 10px, 1px);
+}
