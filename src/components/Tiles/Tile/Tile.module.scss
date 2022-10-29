@@ -1,0 +1,47 @@
+@import "src/styles/mixins.scss";
+
+.tile {
+  position: relative;
+
+  padding: $content-padding-sm;
+  font-weight: 300;
+
+  text-align: center;
+
+  flex: 1 0 25%;
+
+  border: 1px solid transparent;
+
+  & > div:first-child {
+    margin-bottom: 20px;
+  }
+
+  &_title {
+    font-weight: 700;
+    font-size: 40px;
+
+    & > span {
+      font-size: 16px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:nth-child(1) {
+    @include tileGradient(bottom right);
+  }
+
+  &:nth-child(2) {
+    @include tileGradient(bottom left);
+  }
+
+  &:nth-child(3) {
+    @include tileGradient(top right);
+  }
+
+  &:nth-child(4) {
+    @include tileGradient(top left);
+  }
+}
